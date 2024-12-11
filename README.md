@@ -1,11 +1,17 @@
-To install dependencies:
-```sh
-bun install
-```
+# hono-vite-tailwind
 
-To run:
-```sh
-bun run dev
-```
+![screenshot](./screenshot.jpeg)
 
-open http://localhost:3000
+## Architectures
+
+|#|tech|
+|-|-|
+|Language|TypeScript|
+|Runtime|Bun|
+|Package Manager|Bun|
+|Linter & Formatter|Biome|
+|CSS Styling|Tailwind CSS|
+|Build & Bundler|Vite|
+|Frontend|hono/jsx|
+|Develop environment|Dev Containers (for VSCode)|
+|Deploy|Docker Container|
