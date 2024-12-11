@@ -1,10 +1,26 @@
 import { defineConfig } from 'vite'
 import devServer from '@hono/vite-dev-server'
 
-export default defineConfig(({ mode }) => ({
-  plugins: [
-    devServer({
-      entry: 'src/index.tsx',
-    }),
-  ],
-}))
+export default defineConfig(({ mode }) =>
+  mode === 'dev'
+    ? {
+        plugins: [
+          devServer({
+            entry: 'src/index.ts',
+          }),
+        ],
+      }
+    : {
+        build: {
+          minify: true,
+          outDir: './dist/static',
+          rollupOptions: {
+            input: ['./src/front/bundle.tsx', './src/front/styles.css'],
+            output: {
+              entryFileNames: 'bundle.js',
+              assetFileNames: '[name].[ext]',
+            },
+          },
+        },
+      },
+)
