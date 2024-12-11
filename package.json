@@ -1,21 +1,21 @@
 {
-	"name": "hono-vite-tailwind",
-	"type": "module",
-	"scripts": {
-		"dev": "vite --mode dev --host 127.0.0.1",
-		"build": "vite build",
-		"serve": "PROD=true bun run --hot src/index.ts"
-	},
-	"dependencies": {
-		"hono": "^4.6.13"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
-		"@hono/vite-dev-server": "^0.17.0",
-		"@types/bun": "^1.1.14",
-		"autoprefixer": "^10.4.20",
-		"postcss": "^8.4.49",
-		"tailwindcss": "^3.4.16",
-		"vite": "^6.0.3"
-	}
+  "name": "hono-vite-tailwind",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode dev --host 127.0.0.1",
+    "build": "vite build",
+    "serve": "PROD=true bun run --hot src/index.ts"
+  },
+  "dependencies": {
+    "hono": "^4.6.13"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@hono/vite-dev-server": "^0.17.0",
+    "@types/bun": "^1.1.14",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "vite": "^6.0.3"
+  }
 }
