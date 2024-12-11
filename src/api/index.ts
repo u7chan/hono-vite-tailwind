@@ -1,12 +1,12 @@
 import { Hono } from 'hono'
 
-const app = new Hono()
+const api = new Hono()
 
-app.get('/', (c) => {
+api.get('/', (c) => {
   return c.json({
     status: 'Health OK',
     date: new Date().toLocaleString(),
   })
 })
 
-export default app
+export default api
