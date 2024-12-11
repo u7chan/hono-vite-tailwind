@@ -1,0 +1,43 @@
+{
+  "name": "hono-vite-tailwind",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "vscode",
+  "updateRemoteUserUID": false,
+  "postCreateCommand": "bun i",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "biomejs.biome",
+        "biome.lspBin": "./node_modules/.bin/biome",
+        "files.associations": {
+          "*.css": "tailwindcss"
+        },
+        // Automatic Tailwind CSS class sorting with Biome
+        "emeraldwalk.runonsave": {
+          "commands": [
+            {
+              "match": "\\.(ts|tsx|js|jsx|html)$",
+              "cmd": "bunx @biomejs/biome lint \"${file}\" --write --unsafe"
+            }
+          ]
+        }
+      },
+      "extensions": [
+        "biomejs.biome",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "oderwat.indent-rainbow",
+        "shardulm94.trailing-spaces",
+        "emeraldwalk.RunOnSave",
+        "bradlc.vscode-tailwindcss",
+        "stivo.tailwind-fold"
+      ]
+    }
+  }
+}

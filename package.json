@@ -1,0 +1,13 @@
+{
+	"name": "hono-vite-tailwind",
+	"scripts": {
+		"dev": "bun run --hot src/index.ts"
+	},
+	"dependencies": {
+		"hono": "^4.6.13"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/bun": "^1.1.14"
+	}
+}
