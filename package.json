@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
-    "hono": "^4.6.13"
+    "hono": "^4.6.13",
+    "tsx": "^4.19.2"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
