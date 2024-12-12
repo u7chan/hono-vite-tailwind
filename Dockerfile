@@ -8,7 +8,7 @@ COPY . .
 RUN npm i -g bun
 RUN bun i
 RUN bun run build
-RUN rm -rf node_modules
+RUN rm -rf node_modules && rm -rf ./src/client
 RUN bun i --production
 
 FROM base AS runner
