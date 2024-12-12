@@ -8,6 +8,7 @@
     "lint": "biome lint ./src"
   },
   "dependencies": {
+    "@hono/node-server": "^1.13.7",
     "hono": "^4.6.13"
   },
   "devDependencies": {
