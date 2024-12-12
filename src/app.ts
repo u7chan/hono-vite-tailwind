@@ -1,11 +1,11 @@
 import { Hono } from 'hono'
 
-import api from './api'
-import front from './front'
+import api from './app-api'
+import client from './app-client'
 
 const app = new Hono()
 
 app.route('/api', api)
-app.route('/', front)
+app.route('/', client)
 
 export default app

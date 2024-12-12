@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) =>
           minify: true,
           outDir: './dist/static',
           rollupOptions: {
-            input: ['./src/front/bundle.tsx', './src/front/styles.css'],
+            input: ['./src/client/bundle.tsx', './src/client/styles.css'],
             output: {
               entryFileNames: 'bundle.js',
               assetFileNames: '[name].[ext]',

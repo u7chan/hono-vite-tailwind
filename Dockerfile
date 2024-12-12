@@ -18,9 +18,7 @@ WORKDIR /app
 COPY --from=builder /usr/local/bin/bun /usr/local/bin/bun
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/src/api ./src/api
-COPY --from=builder /app/src/front/index.tsx ./src/front/index.tsx
-COPY --from=builder /app/src/index.ts ./src/index.ts
+COPY --from=builder /app/src ./src
 COPY --from=builder /app/tsconfig.json ./tsconfig.json
 
 ENV TZ=Asia/Tokyo
@@ -28,4 +26,4 @@ ENV PROD=true
 
 USER node
 
-CMD ["bun", "run", "--hot", "./src/index.ts"]
+CMD ["npx", "tsx", "./src/node-server.ts"]

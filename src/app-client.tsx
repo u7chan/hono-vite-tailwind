@@ -3,11 +3,6 @@ import { Hono } from 'hono'
 const app = new Hono()
 const isProduction = process.env.PROD === 'true'
 
-if (isProduction) {
-  const { serveStatic } = await import('@hono/node-server/serve-static')
-  app.use('/static/*', serveStatic({ root: './dist' }))
-}
-
 app.get('/', (c) =>
   c.html(
     <html lang='en'>
@@ -21,8 +16,8 @@ app.get('/', (c) =>
           </>
         ) : (
           <>
-            <link href='/src/front/styles.css' rel='stylesheet' />
-            <script type='module' src='/src/front/bundle.tsx' />
+            <link href='/src/client/styles.css' rel='stylesheet' />
+            <script type='module' src='/src/client/bundle.tsx' />
           </>
         )}
       </head>

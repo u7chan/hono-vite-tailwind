@@ -7,7 +7,7 @@
 |#|tech|
 |-|-|
 |Language|TypeScript|
-|Runtime|Bun|
+|Runtime|Node|
 |Package Manager|Bun|
 |Linter & Formatter|Biome|
 |CSS Styling|Tailwind CSS|
