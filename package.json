@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite --mode dev --host 127.0.0.1",
     "build": "vite build",
-    "serve": "PROD=true bun run --hot ./src/index.ts",
+    "serve": "PROD=true tsx ./src/node-server.ts",
     "lint": "biome lint ./src"
   },
   "dependencies": {

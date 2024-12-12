@@ -1,10 +1,11 @@
 import { Hono } from 'hono'
 
 const app = new Hono()
+const isProduction = process.env.PROD === 'true'
 
-if (import.meta.env.PROD) {
-  const module = await import('hono/bun')
-  app.use('/static/*', module.serveStatic({ root: './dist' }))
+if (isProduction) {
+  const { serveStatic } = await import('@hono/node-server/serve-static')
+  app.use('/static/*', serveStatic({ root: './dist' }))
 }
 
 app.get('/', (c) =>
@@ -13,7 +14,7 @@ app.get('/', (c) =>
       <head>
         <meta charSet='utf-8' />
         <meta content='width=device-width, initial-scale=1' name='viewport' />
-        {import.meta.env.PROD ? (
+        {isProduction ? (
           <>
             <link href='/static/styles.css' rel='stylesheet' />
             <script type='module' src='/static/bundle.js' />
