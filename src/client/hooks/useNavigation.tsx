@@ -1,4 +1,4 @@
-import { useState, useContext, createContext, type PropsWithChildren } from 'hono/jsx'
+import { useState, useContext, createContext, type FC, type Child } from 'hono/jsx'
 
 interface Navigation {
   to: string
@@ -7,13 +7,11 @@ interface Navigation {
 
 const NavigationContext = createContext<Navigation | null>(null)
 
-export function NavigationProvider({ children }: PropsWithChildren) {
+export const NavigationProvider: FC<{ children: () => Child }> = ({ children }) => {
   const [to, setTo] = useState('')
   const handleGoTo = (value: string) => {
-    console.log('#a', { value })
     setTo(value)
   }
-  console.log('#b', { to })
   return (
     <NavigationContext.Provider
       value={{
@@ -21,7 +19,7 @@ export function NavigationProvider({ children }: PropsWithChildren) {
         goto: handleGoTo,
       }}
     >
-      {children}
+      {children()}
     </NavigationContext.Provider>
   )
 }

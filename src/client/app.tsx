@@ -6,7 +6,6 @@ import Dashboard from './ui/Dashboard'
 
 const App: FC = () => {
   const { to } = useNavigaton()
-  console.log('#c', { to })
   return (
     <>
       {to === '' && <SingIn />}
