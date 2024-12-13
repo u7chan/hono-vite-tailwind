@@ -20,7 +20,7 @@ const SingIn: FC = () => {
         if (!res.ok) {
           throw new Error(`Response error => ${res.status} ${res.statusText}`)
         }
-        goto('dashboard')
+        goto('/dashboard')
       })
       .catch((e) => {
         console.error(e)

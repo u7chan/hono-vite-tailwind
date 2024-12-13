@@ -1,15 +1,17 @@
 import { useState, useContext, createContext, type FC, type Child } from 'hono/jsx'
 
+type Route = '/' | '/dashboard'
+
 interface Navigation {
-  to: string
-  goto: (to: string) => void
+  to: Route
+  goto: (to: Route) => void
 }
 
 const NavigationContext = createContext<Navigation | null>(null)
 
 export const NavigationProvider: FC<{ onRender: () => Child }> = ({ onRender }) => {
-  const [to, setTo] = useState('')
-  const handleGoTo = (value: string) => {
+  const [to, setTo] = useState<Route>('/')
+  const handleGoTo = (value: Route) => {
     setTo(value)
   }
   return (

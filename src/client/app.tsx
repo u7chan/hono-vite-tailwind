@@ -8,8 +8,8 @@ const App: FC = () => {
   const { to } = useNavigaton()
   return (
     <>
-      {to === '' && <SingIn />}
-      {to === 'dashboard' && <Dashboard />}
+      {to === '/' && <SingIn />}
+      {to === '/dashboard' && <Dashboard />}
     </>
   )
 }
