@@ -1,5 +1,5 @@
 import type { FC } from 'hono/jsx'
-import { useNavigaton } from '../hooks/useNavigation'
+import { useNavigaton } from '../providers/NavigationProvider'
 
 const SingIn: FC = () => {
   const { goto } = useNavigaton()

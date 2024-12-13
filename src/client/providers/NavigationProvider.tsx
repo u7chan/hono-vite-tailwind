@@ -1,6 +1,7 @@
 import { useState, useContext, createContext, type FC, type Child } from 'hono/jsx'
+import { useAuth } from './AuthProvider'
 
-type Route = '/' | '/dashboard'
+type Route = '/signin' | '/dashboard'
 
 interface Navigation {
   to: Route
@@ -10,7 +11,8 @@ interface Navigation {
 const NavigationContext = createContext<Navigation | null>(null)
 
 export const NavigationProvider: FC<{ onRender: () => Child }> = ({ onRender }) => {
-  const [to, setTo] = useState<Route>('/')
+  const { loggedIn } = useAuth()
+  const [to, setTo] = useState<Route>(loggedIn ? '/dashboard' : '/signin')
   const handleGoTo = (value: Route) => {
     setTo(value)
   }

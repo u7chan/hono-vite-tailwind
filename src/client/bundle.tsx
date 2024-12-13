@@ -1,10 +1,13 @@
 import type { FC } from 'hono/jsx'
 import { render } from 'hono/jsx/dom'
-import { NavigationProvider } from './hooks/useNavigation'
+
+import { NavigationProvider } from './providers/NavigationProvider'
+import { AuthProvider } from './providers/AuthProvider'
+
 import App from './app'
 
 const Bundle: FC = () => {
-  return <NavigationProvider onRender={() => <App />} />
+  return <AuthProvider onRender={() => <NavigationProvider onRender={() => <App />} />} />
 }
 
 const root = document.getElementById('root')
