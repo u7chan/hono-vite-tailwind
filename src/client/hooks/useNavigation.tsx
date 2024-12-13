@@ -7,7 +7,7 @@ interface Navigation {
 
 const NavigationContext = createContext<Navigation | null>(null)
 
-export const NavigationProvider: FC<{ children: () => Child }> = ({ children }) => {
+export const NavigationProvider: FC<{ onRender: () => Child }> = ({ onRender }) => {
   const [to, setTo] = useState('')
   const handleGoTo = (value: string) => {
     setTo(value)
@@ -19,7 +19,7 @@ export const NavigationProvider: FC<{ children: () => Child }> = ({ children }) 
         goto: handleGoTo,
       }}
     >
-      {children()}
+      {onRender()}
     </NavigationContext.Provider>
   )
 }

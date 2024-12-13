@@ -4,7 +4,7 @@ import { NavigationProvider } from './hooks/useNavigation'
 import App from './app'
 
 const Bundle: FC = () => {
-  return <NavigationProvider>{() => <App />}</NavigationProvider>
+  return <NavigationProvider onRender={() => <App />} />
 }
 
 const root = document.getElementById('root')
