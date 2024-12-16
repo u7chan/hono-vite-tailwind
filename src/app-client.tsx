@@ -1,10 +1,15 @@
 import { Hono } from 'hono'
+// import { getSignedCookie } from 'hono/cookie'
+import { env } from './util/env'
 
 const app = new Hono()
-const isProduction = process.env.PROD === 'true'
+const isProduction = env.PROD
 
-app.get('/', (c) =>
-  c.html(
+app.get('/', async (c) => {
+  // const sessionSecret = 'sponge_bob'
+  // const cookie = await getSignedCookie(c, sessionSecret)
+  // const sessionId = cookie.session || ''
+  return c.html(
     <html lang='en'>
       <head>
         <meta charSet='utf-8' />
@@ -25,7 +30,7 @@ app.get('/', (c) =>
         <div id='root' />
       </body>
     </html>,
-  ),
-)
+  )
+})
 
 export default app

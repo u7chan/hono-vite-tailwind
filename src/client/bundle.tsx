@@ -1,16 +1,14 @@
+import type { FC } from 'hono/jsx'
 import { render } from 'hono/jsx/dom'
-import Counter from './ui/Counter'
 
-function App() {
-  return (
-    <>
-      <h1 className='bg-gray-300 text-center font-bold text-3xl'>Hello Hono!</h1>
-      <div className='mt-2 grid place-items-center gap-2'>
-        <Counter />
-      </div>
-    </>
-  )
+import { NavigationProvider } from './providers/NavigationProvider'
+import { AuthProvider } from './providers/AuthProvider'
+
+import App from './app'
+
+const Bundle: FC = () => {
+  return <AuthProvider onRender={() => <NavigationProvider onRender={() => <App />} />} />
 }
 
 const root = document.getElementById('root')
-root && render(<App />, root)
+root && render(<Bundle />, root)

@@ -5,18 +5,29 @@
     "dev": "vite --mode dev --host 127.0.0.1",
     "build": "vite build",
     "serve": "PROD=true tsx ./src/node-server.ts",
-    "lint": "biome lint ./src"
+    "lint": "biome lint ./src",
+    "db:push": "drizzle-kit push",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:seeds": "bun run src/db/seeds.ts"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.38.2",
     "hono": "^4.6.13",
+    "pg": "^8.13.1",
     "tsx": "^4.19.2"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@hono/vite-dev-server": "^0.17.0",
+    "@types/bcrypt": "^5.0.2",
     "@types/bun": "^1.1.14",
+    "@types/pg": "^8.11.10",
     "autoprefixer": "^10.4.20",
+    "drizzle-kit": "^0.30.1",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.16",
     "vite": "^6.0.3"
