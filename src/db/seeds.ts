@@ -1,9 +1,9 @@
-import 'dotenv/config'
 import { drizzle } from 'drizzle-orm/node-postgres'
 import { accountsTable } from './schema'
+import { env } from '../util/env'
 import { hashPassword } from '../util/crypt'
 
-const db = drizzle(process.env.DATABASE_URL || '')
+const db = drizzle(env.DATABASE_URL)
 
 async function main() {
   console.log('Seeder Started.')

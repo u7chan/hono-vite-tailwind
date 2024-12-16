@@ -1,8 +1,9 @@
 import { Hono } from 'hono'
 // import { getSignedCookie } from 'hono/cookie'
+import { env } from './util/env'
 
 const app = new Hono()
-const isProduction = process.env.PROD === 'true'
+const isProduction = env.PROD
 
 app.get('/', async (c) => {
   // const sessionSecret = 'sponge_bob'

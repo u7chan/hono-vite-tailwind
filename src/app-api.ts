@@ -13,7 +13,7 @@ app.get('/', (c) => {
 
 app.post('/signin', async (c) => {
   const { email, password } = await c.req.json()
-  if (!signIn(email, password)) {
+  if (!(await signIn(email, password))) {
     return new Response('Unauthorized', { status: 401 })
   }
   const sessionKey = 'session'
