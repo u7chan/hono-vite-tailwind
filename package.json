@@ -5,7 +5,8 @@
     "dev": "vite --mode dev --host 127.0.0.1",
     "build": "vite build",
     "serve": "PROD=true tsx ./src/node-server.ts",
-    "lint": "biome lint ./src"
+    "lint": "biome lint ./src",
+    "db:push": "drizzle-kit push"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
