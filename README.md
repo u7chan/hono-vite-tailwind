@@ -11,9 +11,10 @@
 |CSS Styling|Tailwind CSS|
 |Build & Bundler|Vite|
 |Frontend|hono/jsx|
+|DB|PostgreSQL|
+|ORM|Drizzle ORM|
 |Develop environment|Dev Containers (for VSCode)|
 |Deploy|Docker Container|
-
 
 ## Test Local DB
 
