@@ -1,7 +1,5 @@
 # hono-vite-tailwind
 
-![screenshot](./screenshot.jpeg)
-
 ## Architectures
 
 |#|tech|
