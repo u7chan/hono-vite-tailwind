@@ -6,7 +6,9 @@
     "build": "vite build",
     "serve": "PROD=true tsx ./src/node-server.ts",
     "lint": "biome lint ./src",
-    "db:push": "drizzle-kit push"
+    "db:push": "drizzle-kit push",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
